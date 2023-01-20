@@ -1,0 +1,29 @@
+.registerDesign {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 85vh;
+    width: 100vw;
+
+    background-color: lightcyan;
+}
+.registerButtonDesign{
+    height: 3em;
+    width: 8em;
+
+    background-color: orange;
+    cursor: pointer;
+
+    border-radius: 1em;
+
+    transition: 0.3s;
+}
+.registerButtonDesign:hover {
+
+    transition: 0.3s;
+
+    background-color: darkorange;
+}
