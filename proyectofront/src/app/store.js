@@ -17,10 +17,14 @@ const persistConfig = {
     storage,
   }
   const persistedReducer = persistReducer(persistConfig, reducers);
-export default configureStore({
-    reducer: {
-        user: userSlice,
-        serie: serieSlice
-    }
+// export default configureStore({
+//     reducer: {
+//         user: userSlice,
+//         serie: serieSlice
+//     }
     
+// });
+export default configureStore({
+    reducer: persistedReducer,
+    middleware: [thunk]
 });
