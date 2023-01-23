@@ -1,22 +1,24 @@
 .registerDesign {
-
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     height: 85vh;
     width: 100vw;
+    background-color: rgb(224, 224, 255);
 
-    background-color: lightcyan;
 }
+
 .registerButtonDesign{
-    height: 3em;
+    height: 4em;
     width: 8em;
-
-    background-color: orange;
+    margin: 5em;
+    background-color: rgb(110, 5, 63);
     cursor: pointer;
-
+    justify-content: center;
+    display: flex;
+    align-items: center;
     border-radius: 1em;
 
     transition: 0.3s;
@@ -25,5 +27,5 @@
 
     transition: 0.3s;
 
-    background-color: darkorange;
+    background-color: rgb(151, 5, 85);
 }

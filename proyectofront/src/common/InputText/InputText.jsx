@@ -1,9 +1,10 @@
 
 import React from 'react';
-
+import  './inputText.css'
 export const InputText = ({type, name, placeholder, functionHandler}) => {
 
     return (
+        
         <input 
             type={type} 
             name={name} 

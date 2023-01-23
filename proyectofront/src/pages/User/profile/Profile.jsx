@@ -28,6 +28,8 @@ export const Profile = () => {
         <div className='profileDesign'>
             
             {userRDX.userPass.user.name}
+           
+            
         </div>
     )
 }

@@ -1,14 +1,14 @@
 .homeDesign {
 
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    height: 85vh;
+    height: 90vh;
     width: 100vw;
 
-    background-color: lightcyan;
+    background-color: rgb(224, 224, 255);
 }
 
 .rosterDesign {
@@ -19,6 +19,10 @@
     align-items: center;
 }
 
-.loadingGif {
+.loading {
+    display: grid;
     height: 15em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

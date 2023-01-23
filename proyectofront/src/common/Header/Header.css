@@ -6,45 +6,58 @@
     justify-content: center;
     align-items: center;
 
-    height: 15vh;
+    height: 10vh;
     width: 100vw;
+}
+@media screen and (max-width:622px){
+    .headerDesign{
+        display:inline-block;
+        height: 20vh;
+       
+    }
+    .logoDesignHeader {
+        width: 100vw;
+    }
+    
 }
 
 .logoDesignHeader {
 
-    height: 15vh;
-    width: 10vw;
-
+    height: 10vh;
+    width: 19vw;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background-color: darkcyan;
+    background-color: rgb(110, 5, 63);
 }
 
 .searchDesign {
 
-    height: 15vh;
+    height: 10vh;
     width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    background-color: darkcyan;
+    background-color: rgb(110, 5, 63);
+    
 }
 
-.cameraAvatar {
-    height: 8vh;
-}
+
 
 .headerLinksDesign {
 
-    height: 15vh;
+    height: 10vh;
     width: 20vw;
-
+    font-size: x-large;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: flex-end;
 
-    background-color: darkcyan;
+    background-color: rgb(110, 5, 63);
 }
 
 .linkDesign {

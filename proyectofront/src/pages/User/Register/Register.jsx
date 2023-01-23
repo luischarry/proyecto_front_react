@@ -44,7 +44,7 @@ const Registrame = () => {
 
     return (
         <div className='registerDesign'>
-            <pre>{JSON.stringify(credenciales, null, 2)}</pre>
+            
             <InputText type={'text'} name={'name'} placeholder={'Nombre completo'} functionHandler={registerInputHandler}/>
             <InputText type={'text'} name={'surname'} placeholder={'Apellido completo'} functionHandler={registerInputHandler}/>
             <InputText type={'password'} name={'password'} placeholder={'pass'} functionHandler={registerInputHandler}/>

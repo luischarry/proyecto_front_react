@@ -9,18 +9,19 @@
     height: 85vh;
     width: 100vw;
 
-    background-color: lightcyan;
+    background-color: rgb(224, 224, 255);
 }
 
 .loginButtonDesign {
 
-    height: 3em;
+    height: 4em;
     width: 8em;
-
-    background-color: orange;
+    margin: 5em;
+    background-color: rgb(110, 5, 63);
     cursor: pointer;
-
-    border-radius: 1em;
+    justify-content: center;
+    display: flex;
+    align-items: center;
 
     transition: 0.3s;
 }
@@ -29,5 +30,5 @@
 
     transition: 0.3s;
 
-    background-color: darkorange;
+    background-color: rgb(151, 5, 85);
 }

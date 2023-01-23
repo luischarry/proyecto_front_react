@@ -16,7 +16,7 @@
 
 .serieDetailCard {
 
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -54,4 +54,9 @@
 .rentDesign:hover {
     transition: 0.2s;
     background-color: cyan;
+}
+.name{
+    color: blue;
+    font-size:xx-large;
+   
 }

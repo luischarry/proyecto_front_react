@@ -40,6 +40,7 @@ export const Header = () => {
             getSearch(search)
             .then(resultado=>{
                 dispatch(find({series:resultado.data}))
+                console.log(resultado.data)
             })
             .catch(error=>console.log(error))
         }
@@ -60,13 +61,15 @@ export const Header = () => {
 
     return (
         <div className='headerDesign'>
-            <div onClick={()=>navigate("/")} className='logoDesignHeader'><img className='cameraAvatar' src={Logo} alt="Camara"/></div>
+            
+            <div onClick={()=>navigate("/")} className='logoDesignHeader'><img className='cameraAvatar' src="https://cnbl-cdn.bamgrid.com/assets/e41020c93fec10692725897c2cffbc75a1c59a6855b2cb702d85b45c596a81e7/original" alt="Camara"/></div>
+           
             <div className='searchDesign'>
 
                 <InputText type={"text"} name={"search"} placeholder={"Busqueda"} 
                 functionHandler={handleSearch}/>
             </div>
-
+        
             <div className='headerLinksDesign'>
                 {/* Introducimos el logo, independientemente de lo que nos vaya a sacar después */}
 
@@ -92,7 +95,9 @@ export const Header = () => {
                 }
 
             </div>
-        </div>
+                </div>
+
+       
 
 
     );

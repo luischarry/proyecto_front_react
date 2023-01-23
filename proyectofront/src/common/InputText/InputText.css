@@ -1,8 +1,9 @@
 
 .inputDesign {
-
-    width: 8em;
+    width: 21em;
+    height: 4em;
     border-radius: 1em;
-    background-color: lightslategrey;
-
+    background-color: rgb(255, 255, 255);
+    
+    margin-top: 2em
 }
