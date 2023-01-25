@@ -7,3 +7,6 @@
     
     margin-top: 2em
 }
+.inputDesignError {
+    border: 0.2em solid red;
+}

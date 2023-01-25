@@ -1,7 +1,7 @@
 
 import React from 'react';
 import  './inputText.css'
-export const InputText = ({type, name, placeholder, functionHandler}) => {
+export const InputText = ({type, name,className, placeholder, functionHandler,errorHandler}) => {
 
     return (
         
@@ -10,6 +10,7 @@ export const InputText = ({type, name, placeholder, functionHandler}) => {
             name={name} 
             placeholder={placeholder} 
             onChange={(e)=>functionHandler(e)} 
+            onBlur={(e)=>errorHandler(e)} 
             className='inputDesign' 
         />
     )

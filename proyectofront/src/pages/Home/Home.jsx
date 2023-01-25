@@ -46,7 +46,6 @@ export const Home = () => {
                             //Ahora que resultado ya ha venido con las series, 
                             //guardo en el hook tan sólo las series, sin la info 
                             //de la conexión etc.... sólo las series
-
                             setSeries(resultado.data);
                         }
                     )
@@ -57,9 +56,7 @@ export const Home = () => {
 
     }, [series]);
 
-    useEffect(() => {
-        console.log("eeeeooooooooo", datosReduxSeries);
-    })
+  
 
     const Choosen = (serie) => {
 
@@ -67,7 +64,7 @@ export const Home = () => {
         dispatch(select({ choosen: serie }))
 
         //Después de haber guardado ....... redirecciono a la vista o container del detalle de serie
-
+        
         setTimeout(() => {
             navigate("/detail");
         }, 250);
@@ -80,13 +77,14 @@ export const Home = () => {
             {datosReduxSeries.series.length > 0 ? (
                 
                 //Si entramos aqui es porque tenemos series de Redux....
-
+                
                 <div className='rosterDesign'>
+                    
                     {datosReduxSeries.series.map(
+                        
                         serie => {
                             return (
                                 <div onClick={() => Choosen(serie)} key={serie._id}>
-
                                     <CardSerie serie={serie} />
                                 </div>
                             )

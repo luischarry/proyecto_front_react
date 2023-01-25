@@ -29,3 +29,6 @@
 
     background-color: rgb(151, 5, 85);
 }
+.errorText {
+    color: red;
+}
