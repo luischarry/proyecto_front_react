@@ -32,9 +32,10 @@ export const Admin = () => {
 
             allUsersAdmin()
                 .then(resultado => {
-
+                    
                     //seteo el hook de los usuarios...
-                    setAllUsers(resultado);
+                    console.log(userRDX)
+                    setAllUsers(resultado.data);
                 })
                 .catch(error => console.log(error));
         };
@@ -48,7 +49,11 @@ export const Admin = () => {
                 allUsers.map(
                     user => {
                         return (
-                            <div key={user.id}>{user.name} {user.surname}</div>
+                            <div key={user._id}><div>
+                                {user.name} {user.surname} {user.email}
+                                </div>
+                            </div>
+                            
                         )
                     }
                 )

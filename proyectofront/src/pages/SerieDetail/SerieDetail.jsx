@@ -37,16 +37,14 @@ export const SerieDetail = () => {
             returnDate : dayjs().add(7, 'days').format('DD/MM/YYYY'),
             price : 5
         }
-        postRent(body, detailUsr.userPass.token)
+        postRent(body, detailUsr.userPass.token.data.token)
             .then(resultado => {
                 //Esto se ejecutará si el pedido se ha realizado correctamente
                 //mostrando el mensaje
-
-                setMsg(resultado.data)
-                console.log(body)
-                console.log(resultado)
-
-                //Después de haber realizado el pedido, llevamos al user a su perfil
+                //console.log(resultado.data.data)
+                setMsg(resultado.data.data)
+                
+                //Después de haber realizado el pedido, llevamos al main
                 setTimeout(()=>{
 
                     navigate('/');
@@ -54,7 +52,6 @@ export const SerieDetail = () => {
                 
             })
             .catch(error => {
-
                 setMsg(error.message);
             });
     }
@@ -84,7 +81,9 @@ export const SerieDetail = () => {
                     {detailUsr.userPass.token !== '' &&
                     
                         <div onClick={()=>Rentme()} className='rentDesign'>ALQUILAME</div>
+                       
                     }
+                     <div>{msg}</div>
                 </div>
             
             }
