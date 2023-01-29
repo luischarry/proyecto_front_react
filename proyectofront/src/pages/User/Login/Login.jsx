@@ -14,7 +14,6 @@ import './Login.css';
 
 export const Login = () => {
 
-    //Instancia de métodos de Redux
     const dispatch = useDispatch();
 
     const datosReduxUsuario = useSelector(userData);
@@ -56,16 +55,11 @@ export const Login = () => {
                 return;
             }
         }
-
-
-
-
-        //Desde aqui llamamos al servicio....
+        //llamamos al servicio
         postLogin(credenciales)
             .then(
                 resultado => {
 
-                    //Ahora yo decodificaría el token... 
 
                     //Una vez decodificado, guardaría los datos de usuario y el token,
                     //ambas cosas en REDUX, para usarlas cuando yo quiera
@@ -78,8 +72,6 @@ export const Login = () => {
 
                     }
                     
-                    //Finalmente, guardo en RDX....
-
                     //Guardo mediante la ACCIÓN login, los datos del token y del token decodificado (datos de usuario)
                     dispatch(login({ userPass: userPass }));
 

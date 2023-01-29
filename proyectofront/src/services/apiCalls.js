@@ -26,15 +26,11 @@ export const getSearch = async (search) => {
     return await axios.get(`${root}series/name/${search}`);
 }
 export const postRent = async (body, token) => {
-    // console.log('entra a la llamada')
-    // console.log(body);
-    // console.log(token);
+    
     let config = {
         headers: { Authorization: `Bearer ${token}` }
     }
-
-    //await axios.post(`${root}rentals`,body,config)
-    //const resultado = {data: 'El pedido se ha realizado correctamente'} 
+ 
     return await axios.post(`${root}rentals/`, body, config)
 
 
@@ -53,11 +49,12 @@ export const allUsersAdmin = async (token) => {
 
     return await axios.get(`${root}users/allusers`, config);
 }
-export const AllrentalsUser = async (token, id) => {
+export const AllrentalsUser = async (token, _id) => {
+    console.log("aqui esta",_id)
     let config = {
         headers: { Authorization: `Bearer ${token}` }
     }
-    return await axios.get(`${root}rentals/user/:${id}`, config);
+    return await axios.get(`${root}rentals/user/${_id}`, config);
 }
 
 export const allRentalsAdmin = async (token) => {
@@ -65,4 +62,4 @@ export const allRentalsAdmin = async (token) => {
         headers: { Authorization: `Bearer ${token}` }
     }
     return await axios.get(`${root}rentals`, config);
-}
+}   

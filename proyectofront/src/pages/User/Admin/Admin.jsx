@@ -10,10 +10,8 @@ import { allUsersAdmin, allRentalsAdmin } from '../../../services/apiCalls';
 
 export const Admin = () => {
 
-    //Instancio useNavigate
     const navigate = useNavigate();
 
-    //Instancio RDX
     const userRDX = useSelector(userData);
 
     const [allUsers, setAllUsers] = useState([]);
@@ -33,7 +31,6 @@ export const Admin = () => {
 
             allUsersAdmin(userRDX.userPass.token.data.token)
                 .then(resultado => {
-
                     //seteo el hook de los usuarios...
                     setAllUsers(resultado.data);
                 })
@@ -123,4 +120,3 @@ export const Admin = () => {
         </div>
     )
 };
-{/* <p>fecha inicio</p>{rental.fechaInicio}</td> <td>Precio{rental.importe}</td> <td>{rental.serieId.name}</td><td>{rental.userId.email}</td> <td>{rental.fechaFin}</td>  */ }

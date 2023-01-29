@@ -19,8 +19,8 @@
     align-items: center;
 }
 
-.loading {
-    display: grid;
+.loadingGif {
+    display: flex;
     height: 15em;
     flex-direction: column;
     justify-content: center;

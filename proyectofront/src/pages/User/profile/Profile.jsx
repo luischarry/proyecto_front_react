@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 import './Profile.css';
 import { useNavigate } from 'react-router-dom';
 //Imports de RDX
@@ -14,7 +14,7 @@ export const Profile = () => {
     //Instancio RDX
     const userRDX = useSelector(userData);
 
-    //const [allRentals, setAllRentals] = useState([]);
+    const [allRentals, setAllRentals] = useState([]);
     
     useEffect(() => {
 
@@ -23,22 +23,25 @@ export const Profile = () => {
 
 
         }
+
     }, []);
-    // useEffect(() => {
-    //     if (allRentals===0){
-    //         AllrentalsUser(userRDX.userPass.token.data.token,userRDX.userPass.user._id)
-    //         .then(resultado => {
-    //             console.log(resultado.data)
-    //             setAllRentals(resultado.data)
-    //         }).catch(error => console.log(error))
-    //     }
-    // },[allRentals])
+
+    useEffect(() => {
+        
+        if (allRentals.length===0){
+            
+            AllrentalsUser(userRDX.userPass.token.data.token,userRDX.userPass.user._id)
+            .then(resultado => {
+                
+                setAllRentals(resultado.data)
+            }).catch(error => console.log(error))
+        }
+    },[allRentals])
 
 
     return (
        
         <div className='profileDesign'>
-             {console.log("aqui",userRDX)}
             <div className='profile'>
                 <header>
                     <h1>TU PERFIL</h1> 
@@ -61,23 +64,41 @@ export const Profile = () => {
                 </div>
             </div>
             <div><h2>ALQUILERES REALIZADOS</h2></div>
-            {/* {allRentals.length > 0 && allRentals.map(
-                    rental => {
+            <div>
+                {allRentals.length >0 &&
+                
+                allRentals.map(
+                    rental=>{
                         return (
-                            <table class="table">
-                            <div key={rental._id}><div>
-                                
-                                <tbody>
-                                <tr><td><p>fecha inicio</p>{rental.fechaInicio}</td> <td>Precio{rental.importe}</td> <td>{rental.serieId.name}</td><td>{rental.fechaFin}</td>  </tr>
-                                </tbody> 
-                                
+                            <div>
+                                <div key={rental._id}>
+
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Fecha Inicio</th>
+                                                <th>Fecha Fin</th>
+                                                <th>Nombre de la Serie</th>
+                                                <th>Valor del Alquiler</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>{rental.fechaInicio}</td>
+                                                <td>{rental.fechaFin}</td>
+                                                <td>{rental.nameserie}</td>
+                                                <td>{rental.importe} €</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                            </div>
-                            </table>
                         )
                     }
-                )} */}
-
+                )
+                }
+            </div>
+            
         </div>
     )
 }
