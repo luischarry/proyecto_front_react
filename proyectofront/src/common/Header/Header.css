@@ -9,17 +9,7 @@
     height: 10vh;
     width: 100vw;
 }
-@media screen and (max-width:622px){
-    .headerDesign{
-        display:inline-block;
-        height: 20vh;
-       
-    }
-    .logoDesignHeader {
-        width: 100vw;
-    }
-    
-}
+
 
 .logoDesignHeader {
 

@@ -1,5 +1,5 @@
 
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './SerieDetail.css';
 import dayjs from 'dayjs';
 import { useNavigate } from 'react-router-dom';
@@ -9,6 +9,7 @@ import { serieData } from '../serieSlice';
 import { userData } from '../User/userSlice';
 import { poster_default } from '../../services/utiles';
 import { postRent } from '../../services/apiCalls';
+
 export const SerieDetail = () => {
 
     //Instanciar los datos de Redux...
@@ -29,13 +30,13 @@ export const SerieDetail = () => {
         //Vamos a recolectar los datos necesarios para hacer el alquiler y enviarlos al servicio
 
         let body = {
-            
+
             //id de la serie...
-            idSerie : detailRdx.choosen._id,
-            idUser : detailUsr.userPass.user._id,
-            rentalDate : dayjs().format('DD/MM/YYYY'),
-            returnDate : dayjs().add(7, 'days').format('DD/MM/YYYY'),
-            price : 5
+            idSerie: detailRdx.choosen._id,
+            idUser: detailUsr.userPass.user._id,
+            rentalDate: dayjs().format('DD/MM/YYYY'),
+            returnDate: dayjs().add(7, 'days').format('DD/MM/YYYY'),
+            price: 5
         }
         postRent(body, detailUsr.userPass.token.data.token)
             .then(resultado => {
@@ -43,49 +44,49 @@ export const SerieDetail = () => {
                 //mostrando el mensaje
                 //console.log(resultado.data.data)
                 setMsg(resultado.data.data)
-                
+
                 //Después de haber realizado el pedido, llevamos al main
-                setTimeout(()=>{
+                setTimeout(() => {
 
                     navigate('/');
-                },1500);
-                
+                }, 1500);
+
             })
             .catch(error => {
                 setMsg(error.message);
             });
     }
 
-    return(
+    return (
         <div className='serieDesign'>
             {detailRdx.choosen.id !== '' &&
                 <div className='serieDetailCard'>
-                    
+
                     <div><div className='name'>{detailRdx.choosen.name}</div>
-                    {detailRdx.choosen.original_name !== detailRdx.choosen.name &&
-                        <div>{detailRdx.choosen.original_name}
-                        </div>
-                    }
-                    
-                    <div>{detailRdx.choosen.first_air_date}</div>
-                    <div>{detailRdx.choosen.overview !== '' ? detailRdx.choosen.overview : "No overview available"}</div>
-                    
-                    
+                        {detailRdx.choosen.original_name !== detailRdx.choosen.name &&
+                            <div>{detailRdx.choosen.original_name}
+                            </div>
+                        }
+
+                        <div>{detailRdx.choosen.first_air_date}</div>
+                        <div className='overview'>{detailRdx.choosen.overview !== '' ? detailRdx.choosen.overview : "No overview available"}</div>
+
+
                     </div>
-                    <div><img className='detailPoster' src={`${poster_default}${detailRdx.choosen.poster_path}`}/></div>
-                    
+                    <div><img className='detailPoster' src={`${poster_default}${detailRdx.choosen.poster_path}`} /></div>
+
 
                     {/* En caso de que el usuario esté logeado, es decir, tenemos sus credenciales en REDUX, mostraremos
                     un boton para poder alquilar la película */}
 
                     {detailUsr.userPass.token !== '' &&
-                    
-                        <div onClick={()=>Rentme()} className='rentDesign'>ALQUILAME</div>
-                       
+
+                        <div onClick={() => Rentme()} className='rentDesign'>ALQUILAME</div>
+
                     }
-                     <div>{msg}</div>
+                    <div>{msg}</div>
                 </div>
-            
+
             }
         </div>
     )

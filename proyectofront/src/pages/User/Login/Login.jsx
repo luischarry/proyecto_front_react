@@ -77,7 +77,7 @@ export const Login = () => {
                         user: decodificado.usuario[0]
 
                     }
-
+                    
                     //Finalmente, guardo en RDX....
 
                     //Guardo mediante la ACCIÓN login, los datos del token y del token decodificado (datos de usuario)

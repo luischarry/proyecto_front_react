@@ -5,7 +5,7 @@ import { Home } from '../Home/Home';
 import { SerieDetail } from '../SerieDetail/SerieDetail';
 import { Admin } from '../User/Admin/Admin';
 import { Login } from '../User/Login/Login';
-import { Profile } from '../User/Profile/Profile';
+import { Profile } from '../User/profile/Profile';
 import { Register } from '../User/Register/Register';
 
 export const Body = () => {

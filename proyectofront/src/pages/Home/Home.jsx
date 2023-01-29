@@ -56,7 +56,7 @@ export const Home = () => {
 
     }, [series]);
 
-  
+
 
     const Choosen = (serie) => {
 
@@ -64,7 +64,7 @@ export const Home = () => {
         dispatch(select({ choosen: serie }))
 
         //Después de haber guardado ....... redirecciono a la vista o container del detalle de serie
-        
+
         setTimeout(() => {
             navigate("/detail");
         }, 250);
@@ -75,16 +75,17 @@ export const Home = () => {
         <div className='homeDesign'>
 
             {datosReduxSeries.series.length > 0 ? (
-                
+
                 //Si entramos aqui es porque tenemos series de Redux....
-                
+
                 <div className='rosterDesign'>
-                    
+
                     {datosReduxSeries.series.map(
-                        
+
                         serie => {
                             return (
-                                <div onClick={() => Choosen(serie)} key={serie._id}>
+                                <div key={serie._id} onClick={() => Choosen(serie)} >
+
                                     <CardSerie serie={serie} />
                                 </div>
                             )
@@ -99,17 +100,22 @@ export const Home = () => {
                     // Ya que el hook si contiene las series, es momento de mapearlas
                     // y poder mostrarlas en pantalla
 
-                    <div className='rosterDesign'>
+                    <ul className='rosterDesign'>
                         {series.map(
                             serie => {
                                 return (
                                     <div onClick={() => Choosen(serie)} key={serie.id}>
+
                                         <CardSerie serie={serie} />
                                     </div>
+                                    // <li onClick={() => Choosen(serie)} key={serie.id}>
+
+                                    //      <CardSerie serie={serie} />
+                                    //  </li>
                                 )
                             }
                         )}
-                    </div>
+                    </ul>
 
                 ) : (
 

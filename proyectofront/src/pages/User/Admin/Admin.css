@@ -1,7 +1,7 @@
 .adminDesign {
 
-    display: flex;
-    flex-direction: column;
+    display: -webkit-inline-box;
+    
     justify-content: center;
     align-items: center;
 
@@ -9,4 +9,12 @@
     width: 100vw;
 
     background-color: lightcyan;
+}
+
+table{
+    border: 1px solid;
+    border-collapse: collapse;
+}
+tbody > tr > td{
+    border:1px solid
 }
